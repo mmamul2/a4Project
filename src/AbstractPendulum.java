@@ -29,8 +29,6 @@ public abstract class AbstractPendulum {
 
 	this.g = inG;
     }
-
-    
     
     private boolean validDisplacement (double val) { return (val >= 0); }
     private boolean validPointMass (double val) { return (val > 0); }
