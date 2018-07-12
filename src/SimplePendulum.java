@@ -34,4 +34,12 @@ public class SimplePendulum extends AbstractPendulum {
     public double getTheta (double t) {
 	return this.getMaxAngularDisplacement () * Math.cos (angularFrequency * t);
     }
+
+    @Override
+    public void setGravityModel(GravityModel newG){
+        super.setGravityModel(newG);
+        angularFrequency = Math.sqrt (this.getGravitationalField () / this.getStringLength ());
+        periodOfMotion = 2 * Math.PI
+                * Math.sqrt (this.getStringLength () / this.getGravitationalField ());
+    }
 }
